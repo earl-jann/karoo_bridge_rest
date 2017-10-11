@@ -1,0 +1,42 @@
+{
+  "name": "config_sip_listeners_autoban",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true,
+      "generated": false,
+      "required": true
+    },
+    "packet_rate_min_treshold": {
+      "type": "number",
+      "required": true
+    },
+    "packet_rate_max_treshold": {
+      "type": "number",
+      "required": true
+    },
+    "packet_rate_treshold_ban_duration": {
+      "type": "number",
+      "required": true
+    },
+    "packet_rate_white_list": {
+      "type": "string"
+    },
+    "execute_on_ban": {
+      "type": "string"
+    },
+    "auto_null_route_on_ban": {
+      "type": "boolean"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {},
+  "http": {"path": "/autoban"}
+}

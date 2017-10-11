@@ -1,0 +1,16 @@
+{
+  "redis": {
+    "host": "127.0.0.1",
+    "port": 6379,
+    "url": "",
+    "password": "",
+    "name": "redis",
+    "db": 11,
+    "connector": "kv-redis"
+  },
+  "redisDS": {
+    "database": 11,
+    "name": "redisDS",
+    "connector": "redis"
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "name": "config_sip_listeners_carp",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true,
+      "generated": false,
+      "required": true
+    },
+    "enabled": {
+      "type": "boolean",
+      "required": true
+    },
+    "virtual_ip_address": {
+      "type": "string",
+      "required": true
+    },
+    "interface_name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "src_address": {
+      "type": "string",
+      "required": true
+    },
+    "up_script": {
+      "type": "string"
+    },
+    "down_script": {
+      "type": "string"
+    },
+    "carp_password": {
+      "type": "string"
+    },
+    "vhid": {
+      "type": "number"
+    },
+    "preferred_master": {
+      "type": "boolean"
+    },
+    "external_address": {
+      "type": "string"
+    },
+    "tcp_enabled": {
+      "type": "boolean"
+    },
+    "udp_enabled": {
+      "type": "boolean"
+    },
+    "ws_enabled": {
+      "type": "boolean"
+    },
+    "wss_enabled": {
+      "type": "boolean"
+    },
+    "tls_enabled": {
+      "type": "boolean"
+    },
+    "sip_port": {
+      "type": "number"
+    },
+    "tls_port": {
+      "type": "number"
+    },
+    "ws_port": {
+      "type": "number"
+    },
+    "wss_port": {
+      "type": "number"
+    },
+    "subnets": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {},
+  "http": {"path": "/carpha"}
+}

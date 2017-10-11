@@ -1,0 +1,27 @@
+{
+  "name": "config_sip_listeners_rtp",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "required": true,
+      "id": true,
+      "generated": false,
+      "default": "rtp-proxy"
+    },
+    "rtp-proxy-read-timeout": {
+      "type": "number"
+    },
+    "rtp-proxy-transport-thread-count": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

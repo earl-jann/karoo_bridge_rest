@@ -1,0 +1,44 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "config_sip_listeners_interfaces": {
+    "dataSource": "redisDS",
+    "public": true
+  },
+  "config_sip_listeners_default": {
+    "dataSource": "redisDS",
+    "public": true
+  },
+  "config_sip_listeners_carp": {
+    "dataSource": "redisDS",
+    "public": true
+  },
+  "config_sip_listeners_tls": {
+    "dataSource": "redisDS",
+    "public": true
+  },
+  "config_sip_listeners_autoban": {
+    "dataSource": "redisDS",
+    "public": true
+  },
+  "config_sip_listeners_ports": {
+    "dataSource": "redisDS",
+    "public": true
+  },
+  "config_sip_listeners_rtp": {
+    "dataSource": "redisDS",
+    "public": true
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "config_sip_listeners_default",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "default-interface-address": {
+      "type": "string",
+      "required": true
+    },
+    "default-interface-port": {
+      "type": "number",
+      "required": true
+    },
+    "id": {
+      "type": "string",
+      "id": true,
+      "generated": false,
+      "required": true,
+      "default": "default_interface"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

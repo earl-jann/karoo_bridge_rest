@@ -1,0 +1,62 @@
+{
+  "name": "config_sip_listeners_interfaces",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true,
+      "generated": false,
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    },
+    "ip_address": {
+      "type": "string",
+      "required": true
+    },
+    "external_address": {
+      "type": "string",
+      "required": true
+    },
+    "tcp_enabled": {
+      "type": "boolean"
+    },
+    "udp_enabled": {
+      "type": "boolean"
+    },
+    "ws_enabled": {
+      "type": "boolean"
+    },
+    "wss_enabled": {
+      "type": "boolean"
+    },
+    "tls_enabled": {
+      "type": "boolean"
+    },
+    "sip_port": {
+      "type": "number"
+    },
+    "tls_port": {
+      "type": "number"
+    },
+    "ws_port": {
+      "type": "number"
+    },
+    "wss_port": {
+      "type": "number"
+    },
+    "subnets": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {},
+  "http": {"path": "/interfaces"}
+}

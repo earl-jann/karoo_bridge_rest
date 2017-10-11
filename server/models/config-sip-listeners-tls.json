@@ -1,0 +1,39 @@
+{
+  "name": "config_sip_listeners_tls",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true,
+      "generated": false,
+      "required": true,
+      "default": "tls"
+    },
+    "tls-ca-file": {
+      "type": "string",
+      "required": true
+    },
+    "tls-ca-path": {
+      "type": "string",
+      "required": true
+    },
+    "tls-certificate-file": {
+      "type": "string"
+    },
+    "tls-private-key-file": {
+      "type": "string",
+      "default": "tls-cert-password"
+    },
+    "tls-verify-peer": {
+      "type": "boolean"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
