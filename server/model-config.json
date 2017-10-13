@@ -40,5 +40,13 @@
   "config_sip_listeners_rtp": {
     "dataSource": "redisDS",
     "public": true
+  },
+  "config_useragent": {
+    "dataSource": "redisDS",
+    "public": true
+  },
+  "config_useragent_channellimits": {
+    "dataSource": "redisDS",
+    "public": true
   }
 }

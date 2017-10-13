@@ -1,0 +1,40 @@
+{
+  "name": "config_useragent",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true,
+      "generated": false,
+      "required": true
+    },
+    "user_agent_name": {
+      "type": "string",
+      "required": true
+    },
+    "register_state_in_contact_params": {
+      "type": "boolean"
+    },
+    "dialog_state_in_contact_params": {
+      "type": "boolean"
+    },
+    "enable_options_routing": {
+      "type": "boolean"
+    },
+    "disable_options_keep_alive": {
+      "type": "boolean"
+    },
+    "require_rtp_for_registrations": {
+      "type": "boolean"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {},
+  "http": {"path": "/useragent"}
+}
