@@ -25,7 +25,7 @@
     "dataSource": "redisDS",
     "public": true
   },
-  "config_sip_listeners_tls": {
+  "config_tls": {
     "dataSource": "redisDS",
     "public": true
   },
@@ -47,6 +47,10 @@
   },
   "config_useragent_channellimits": {
     "dataSource": "redisDS",
+    "public": true
+  },
+  "attachment": {
+    "dataSource": "storage",
     "public": true
   }
 }

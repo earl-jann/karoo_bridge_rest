@@ -8,9 +8,9 @@
   "properties": {
     "id": {
       "type": "string",
-      "required": true,
       "id": true,
       "generated": false,
+      "required": true,
       "default": "rtp-proxy"
     },
     "rtp-proxy-read-timeout": {

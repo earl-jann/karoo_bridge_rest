@@ -5,6 +5,9 @@
   "options": {
     "validateUpsert": true
   },
+  "http": {
+    "path": "/useragent"
+  },
   "properties": {
     "id": {
       "type": "string",
@@ -35,6 +38,5 @@
   "validations": [],
   "relations": {},
   "acls": [],
-  "methods": {},
-  "http": {"path": "/useragent"}
+  "methods": {}
 }

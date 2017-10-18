@@ -12,5 +12,11 @@
     "database": 11,
     "name": "redisDS",
     "connector": "redis"
+  },
+  "storage": {
+    "name": "storage",
+    "connector": "loopback-component-storage",
+    "provider": "filesystem",
+    "root": "./files"
   }
 }

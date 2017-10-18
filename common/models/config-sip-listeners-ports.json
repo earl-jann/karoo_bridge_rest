@@ -1,9 +1,12 @@
 {
-  "name": "config_useragent_channellimits",
+  "name": "config_sip_listeners_ports",
   "base": "PersistedModel",
   "idInjection": false,
   "options": {
     "validateUpsert": true
+  },
+  "http": {
+    "path": "/ports"
   },
   "properties": {
     "id": {
@@ -12,11 +15,19 @@
       "generated": false,
       "required": true
     },
-    "enabled": {
-      "type": "boolean",
+    "sip_tcp_port_base": {
+      "type": "number",
       "required": true
     },
-    "max_channels": {
+    "sip_tcp_port_max": {
+      "type": "number",
+      "required": true
+    },
+    "rtp_proxy_port_base": {
+      "type": "number",
+      "required": true
+    },
+    "rtp_proxy_port_max": {
       "type": "number",
       "required": true
     }
@@ -24,6 +35,5 @@
   "validations": [],
   "relations": {},
   "acls": [],
-  "methods": {},
-  "http": {"path": "/channellimits"}
+  "methods": {}
 }

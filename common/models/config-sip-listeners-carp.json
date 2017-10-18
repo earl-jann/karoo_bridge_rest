@@ -5,6 +5,9 @@
   "options": {
     "validateUpsert": true
   },
+  "http": {
+    "path": "/carpha"
+  },
   "properties": {
     "id": {
       "type": "string",
@@ -84,6 +87,5 @@
   "validations": [],
   "relations": {},
   "acls": [],
-  "methods": {},
-  "http": {"path": "/carpha"}
+  "methods": {}
 }

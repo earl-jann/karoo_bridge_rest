@@ -1,5 +1,5 @@
 {
-  "name": "config_sip_listeners_ports",
+  "name": "config_tls",
   "base": "PersistedModel",
   "idInjection": false,
   "options": {
@@ -12,20 +12,25 @@
       "generated": false,
       "required": true
     },
-    "sip_tcp_port_base": {
-      "type": "number",
+    "tls_ca_file": {
+      "type": "string"
+    },
+    "tls_ca_path": {
+      "type": "string",
       "required": true
     },
-    "sip_tcp_port_max": {
-      "type": "number",
+    "tls_certificate_file": {
+      "type": "string"
+    },
+    "tls_private_key_file": {
+      "type": "string"
+    },
+    "tls_cert_password": {
+      "type": "string",
       "required": true
     },
-    "rtp_proxy_port_base": {
-      "type": "number",
-      "required": true
-    },
-    "rtp_proxy_port_max": {
-      "type": "number",
+    "tls_verify_peer": {
+      "type": "boolean",
       "required": true
     }
   },
@@ -33,5 +38,6 @@
   "relations": {},
   "acls": [],
   "methods": {},
-  "http": {"path": "/ports"}
+  "http": {"path": "/tls"}
 }
+

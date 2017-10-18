@@ -5,6 +5,9 @@
   "options": {
     "validateUpsert": true
   },
+  "http": {
+    "path": "/autoban"
+  },
   "properties": {
     "id": {
       "type": "string",
@@ -37,6 +40,5 @@
   "validations": [],
   "relations": {},
   "acls": [],
-  "methods": {},
-  "http": {"path": "/autoban"}
+  "methods": {}
 }
