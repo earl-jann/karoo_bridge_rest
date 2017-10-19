@@ -49,6 +49,18 @@
     "dataSource": "redisDS",
     "public": true
   },
+  "config_useragent_domainlimits": {
+    "dataSource": "redisDS",
+    "public": true
+  },
+  "config_sipcapture_homer": {
+    "dataSource": "redisDS",
+    "public": true
+  },
+  "config_sipcapture_voipmonitor": {
+    "dataSource": "redisDS",
+    "public": true
+  },
   "attachment": {
     "dataSource": "storage",
     "public": true

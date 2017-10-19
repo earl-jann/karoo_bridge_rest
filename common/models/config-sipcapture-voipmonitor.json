@@ -1,0 +1,38 @@
+{
+  "name": "config_sipcapture_voipmonitor",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "http": {
+    "path": "/voipmonitor"
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true,
+      "generated": false,
+      "required": true
+    },
+    "mysqlhost": {
+      "type": "string",
+      "required": true
+    },
+    "mysqlport": {
+      "type": "number",
+      "required": true
+    },
+    "mysqlusername": {
+      "type": "string",
+      "required": true
+    },
+    "mysqlpassword": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

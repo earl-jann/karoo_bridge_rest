@@ -1,0 +1,49 @@
+{
+  "name": "config_sipcapture_homer",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "http": {
+    "path": "/homer"
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true,
+      "generated": false,
+      "required": true
+    },
+    "homer_enabled": {
+      "type": "boolean",
+      "required": true
+    },
+    "homer_version": {
+      "type": "string",
+      "required": true
+    },
+    "homer_host": {
+      "type": "string",
+      "required": true
+    },
+    "homer_port": {
+      "type": "number",
+      "required": true
+    },
+    "homer_password": {
+      "type": "string"
+    },
+    "homer_compression": {
+      "type": "boolean"
+    },
+    "homer_id": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
