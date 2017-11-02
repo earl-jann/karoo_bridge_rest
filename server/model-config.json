@@ -56,6 +56,14 @@
     "dataSource": "redisDS",
     "public": true
   },
+  "config_sip_listeners_firewall": {
+    "dataSource": "redisDS",
+    "public": true
+  },
+  "config_sip_listeners_firewallrules": {
+    "dataSource": "redisDS",
+    "public": true
+  },
   "config_sip_listeners_ports": {
     "dataSource": "redisDS",
     "public": true
