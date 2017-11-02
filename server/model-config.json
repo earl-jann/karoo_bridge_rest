@@ -52,6 +52,10 @@
     "dataSource": "redisDS",
     "public": true
   },
+  "config_sip_listeners_autoban_packetratewhitelist": {
+    "dataSource": "redisDS",
+    "public": true
+  },
   "config_sip_listeners_ports": {
     "dataSource": "redisDS",
     "public": true

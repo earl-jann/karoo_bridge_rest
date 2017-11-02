@@ -1,23 +1,23 @@
 {
-  "name": "config_sip_listeners_rtp",
+  "name": "config_sip_listeners_autoban_packetratewhitelist",
   "base": "PersistedModel",
   "idInjection": false,
   "options": {
     "validateUpsert": true
+  },
+  "http": {
+    "path": "/packetratewhitelist"
   },
   "properties": {
     "id": {
       "type": "string",
       "id": true,
       "generated": false,
-      "required": true,
-      "default": "rtp-proxy"
+      "required": true
     },
-    "rtp-proxy-read-timeout": {
-      "type": "number"
-    },
-    "rtp-proxy-transport-thread-count": {
-      "type": "number"
+    "type": {
+      "type": "string",
+      "required": true
     }
   },
   "validations": [],
@@ -50,6 +50,13 @@
       "principalId": "$authenticated",
       "permission": "ALLOW",
       "property": "updateAttributes"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "deleteById"
     },
     {
       "accessType": "EXECUTE",
