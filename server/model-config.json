@@ -13,6 +13,25 @@
       "./mixins"
     ]
   },
+  "User": {
+    "dataSource": "db"
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
   "config_sip_listeners_interfaces": {
     "dataSource": "redisDS",
     "public": true

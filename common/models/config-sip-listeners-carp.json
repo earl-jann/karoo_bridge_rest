@@ -20,26 +20,24 @@
       "required": true
     },
     "virtual_ip_address": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "interface_name": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "description": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "src_address": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "up_script": {
-      "type": "string"
+      "type": "string",
+      "default": "/etc/karoo.conf.d/ucarp-vip-up.sh"
     },
     "down_script": {
-      "type": "string"
+      "type": "string",
+      "default": "/etc/karoo.conf.d/ucarp-vip-down.sh"
     },
     "carp_password": {
       "type": "string"
