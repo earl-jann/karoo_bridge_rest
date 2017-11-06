@@ -30,6 +30,14 @@
     "rtp_proxy_port_max": {
       "type": "number",
       "required": true
+    },
+    "transcoder_port_base": {
+      "type": "number",
+      "required": true
+    },
+    "transcoder_port_max": {
+      "type": "number",
+      "required": true
     }
   },
   "validations": [],
