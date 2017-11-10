@@ -12,7 +12,10 @@
     "id": {
       "type": "string",
       "id": true,
-      "generated": false,
+      "generated": true
+    },
+    "address": {
+      "type": "string",
       "required": true
     },
     "type": {
