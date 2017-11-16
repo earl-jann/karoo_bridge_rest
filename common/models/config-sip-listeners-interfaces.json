@@ -18,6 +18,9 @@
     "description": {
       "type": "string"
     },
+    "default": {
+      "type": "boolean"
+    },
     "ip_address": {
       "type": "string",
       "required": true
