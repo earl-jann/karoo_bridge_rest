@@ -5,18 +5,20 @@
   "options": {
     "validateUpsert": true
   },
+  "http": {
+    "path": "/rtpproxy"
+  },
   "properties": {
     "id": {
       "type": "string",
       "id": true,
       "generated": false,
-      "required": true,
-      "default": "rtp-proxy"
+      "required": true
     },
-    "rtp-proxy-read-timeout": {
+    "rtp_proxy_read_timeout": {
       "type": "number"
     },
-    "rtp-proxy-transport-thread-count": {
+    "rtp_proxy_transport_thread_count": {
       "type": "number"
     }
   },
