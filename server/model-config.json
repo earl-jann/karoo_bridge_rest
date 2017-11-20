@@ -92,6 +92,14 @@
     "dataSource": "redisDS",
     "public": true
   },
+  "config_routing_domainprofiles": {
+    "dataSource": "redisDS",
+    "public": true
+  },
+  "config_routing_gatewayprofiles": {
+    "dataSource": "redisDS",
+    "public": true
+  },
   "attachment": {
     "dataSource": "storage",
     "public": true
