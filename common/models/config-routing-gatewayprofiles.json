@@ -20,6 +20,9 @@
     },
     "description": {
       "type": "string"
+    },
+    "properties": {
+      "type": "string"
     }
   },
   "validations": [],

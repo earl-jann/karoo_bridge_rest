@@ -20,6 +20,15 @@
     },
     "description": {
       "type": "string"
+    },
+    "rules": {
+      "type": "string"
+    },
+    "routes": {
+      "type": "string"
+    },
+    "inbound": {
+      "type": "string"
     }
   },
   "validations": [],
