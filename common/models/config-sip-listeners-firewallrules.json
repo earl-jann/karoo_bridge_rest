@@ -21,14 +21,21 @@
     "port_base": {
       "type": "number",
       "required": true
+      ,"index": true
     },
     "port_max": {
       "type": "number",
       "required": true
+      ,"index": true
     },
     "type": {
       "type": "string",
       "required": true
+      ,"index": true
+    },
+    "interface_name": {
+      "type": "string"
+      ,"index": true
     }
   },
   "validations": [],
@@ -75,6 +82,13 @@
       "principalId": "$everyone",
       "permission": "ALLOW",
       "property": "findById"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "count"
     }
   ]
 }
