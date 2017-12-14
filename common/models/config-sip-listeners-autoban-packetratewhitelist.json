@@ -8,6 +8,15 @@
   "http": {
     "path": "/packetratewhitelist"
   },
+  "mixins": {
+    "ConfigGenerator": {
+      "name": "autoban_whitelist",
+      "savePath": "/etc/karoo.conf.d/web/generator/current",
+      "dependencies": [
+        "config_sip_listeners_autoban"
+      ]
+    }
+  },
   "properties": {
     "id": {
       "type": "string",
@@ -25,7 +34,6 @@
   },
   "validations": [],
   "relations": {},
-  "methods": {},
   "acls": [
     {
       "accessType": "*",
@@ -68,5 +76,6 @@
       "permission": "ALLOW",
       "property": "findById"
     }
-  ]
+  ],
+  "methods": {}
 }

@@ -8,6 +8,15 @@
   "http": {
     "path": "/firewallrules"
   },
+  "mixins": {
+    "ConfigGenerator": {
+      "name": "firewall_rules",
+      "savePath": "/etc/karoo.conf.d/web/generator/current",
+      "dependencies": [
+        "config_sip_listeners_firewall"
+      ]
+    }
+  },
   "properties": {
     "id": {
       "type": "string",
@@ -40,7 +49,6 @@
   },
   "validations": [],
   "relations": {},
-  "methods": {},
   "acls": [
     {
       "accessType": "*",
@@ -90,5 +98,6 @@
       "permission": "ALLOW",
       "property": "count"
     }
-  ]
+  ],
+  "methods": {}
 }

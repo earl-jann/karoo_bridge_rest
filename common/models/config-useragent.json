@@ -8,6 +8,13 @@
   "http": {
     "path": "/useragent"
   },
+  "mixins": {
+    "ConfigGenerator": {
+      "name": "useragent",
+      "list": false,
+      "savePath": "/etc/karoo.conf.d/web/generator/current"
+    }
+  },
   "properties": {
     "id": {
       "type": "string",
@@ -37,7 +44,6 @@
   },
   "validations": [],
   "relations": {},
-  "methods": {},
   "acls": [
     {
       "accessType": "*",
@@ -73,5 +79,6 @@
       "permission": "ALLOW",
       "property": "findById"
     }
-  ]
+  ],
+  "methods": {}
 }

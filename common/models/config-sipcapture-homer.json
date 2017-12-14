@@ -8,6 +8,13 @@
   "http": {
     "path": "/homer"
   },
+  "mixins": {
+    "ConfigGenerator": {
+      "name": "homer",
+      "list": false,
+      "savePath": "/etc/karoo.conf.d/web/generator/current"
+    }
+  },
   "properties": {
     "id": {
       "type": "string",
@@ -44,7 +51,6 @@
   },
   "validations": [],
   "relations": {},
-  "methods": {},
   "acls": [
     {
       "accessType": "*",
@@ -80,5 +86,6 @@
       "permission": "ALLOW",
       "property": "findById"
     }
-  ]
+  ],
+  "methods": {}
 }
