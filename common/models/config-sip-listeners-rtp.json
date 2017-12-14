@@ -8,6 +8,13 @@
   "http": {
     "path": "/rtpproxy"
   },
+  "mixins": {
+    "ConfigGenerator": {
+      "name": "rtp_proxy",
+      "list": false,
+      "savePath": "/etc/karoo.conf.d/web/generator/current"
+    }
+  },
   "properties": {
     "id": {
       "type": "string",
@@ -24,7 +31,6 @@
   },
   "validations": [],
   "relations": {},
-  "methods": {},
   "acls": [
     {
       "accessType": "*",
@@ -60,5 +66,6 @@
       "permission": "ALLOW",
       "property": "findById"
     }
-  ]
+  ],
+  "methods": {}
 }

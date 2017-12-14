@@ -8,6 +8,18 @@
   "http": {
     "path": "/interfaces"
   },
+  "mixins": {
+    "ConfigGenerator": {
+      "name": "listeners",
+      "savePath": "/etc/karoo.conf.d/web/generator/current",
+      "dependencies": [
+        { 
+          "model": "config_sipcapture_voipmonitor",
+          "generate": true
+        }
+      ]
+    }
+  },
   "properties": {
     "id": {
       "type": "string",
@@ -61,8 +73,6 @@
   },
   "validations": [],
   "relations": {},
-  "acls": [],
-  "methods": {},
   "acls": [
     {
       "accessType": "*",
@@ -105,5 +115,6 @@
       "permission": "ALLOW",
       "property": "findById"
     }
-  ]
+  ],
+  "methods": {}
 }

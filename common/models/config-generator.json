@@ -1,0 +1,36 @@
+{
+  "name": "config",
+  "plural": "config",
+  "base": "Model",
+  "idInjection": true,
+  "configPath": "/etc/karoo.conf.d/web/generator/current",
+  "backupPath": "/etc/karoo.conf.d/web/generator/backup",
+  "uploadedFiles": "./files",
+  "uploadedScripts": "./scripts",   
+  "publishConfig": "/etc/karoo.conf.d/config",
+  "publishFiles": "/etc/karoo.conf.d/config/uploads",
+  "publishScripts": "/usr/lib64/oss_modules/karoo",
+  "karooGeneratorScript": "./common/scripts/karoo/karoo.generator.js",
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {},
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "generate"
+    }
+  ],
+  "methods": {}
+}

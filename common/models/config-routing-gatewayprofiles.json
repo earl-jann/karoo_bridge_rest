@@ -24,8 +24,6 @@
   },
   "validations": [],
   "relations": {},
-  "acls": [],
-  "methods": {},
   "acls": [
     {
       "accessType": "*",
@@ -68,5 +66,6 @@
       "permission": "ALLOW",
       "property": "findById"
     }
-  ]
+  ],
+  "methods": {}
 }

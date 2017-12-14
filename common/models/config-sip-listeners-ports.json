@@ -8,6 +8,13 @@
   "http": {
     "path": "/ports"
   },
+  "mixins": {
+    "ConfigGenerator": {
+      "name": "sip_ports",
+      "savePath": "/etc/karoo.conf.d/web/generator/current",
+      "list": false
+    }
+  },
   "properties": {
     "id": {
       "type": "string",
@@ -42,7 +49,6 @@
   },
   "validations": [],
   "relations": {},
-  "methods": {},
   "acls": [
     {
       "accessType": "*",
@@ -78,5 +84,6 @@
       "permission": "ALLOW",
       "property": "findById"
     }
-  ]
+  ],
+  "methods": {}
 }
