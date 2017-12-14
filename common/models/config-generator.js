@@ -42,7 +42,7 @@ util.inherits(ConfigPublisher, EventEmitter)
 
 
 ConfigPublisher.prototype.ensureDirPaths = function(callback) {
-  this.deployPath = this.options.generatorPath + "/karoo-config-" 
+  this.deployPath = this.options.generatorPath + "/karoo-config-"
     + new Date().toISOString().replace(/\..+/, '').replace(new RegExp(":", "g"), ".");
 
   this.deployConfig = this.deployPath + "/config";
@@ -100,8 +100,11 @@ ConfigPublisher.prototype.ensureDirPaths = function(callback) {
 }
 
 ConfigPublisher.prototype.aggregateConfig = function(callback)
-{  
+{
   fs.readdir(this.options.configPath, (err, files) => {
+    if (!files) {
+      return callback(new Error('No Files found in ConfigPath: ' + this.options.configPath));
+    }
     var filterFiles = files.filter((file) => { return file.substr(-5) === '.json'; })
     if(err) {
       console.error("ConfigPublisher:aggregateConfig:%s readDir error: %s", this.id, err);
@@ -161,7 +164,7 @@ ConfigPublisher.prototype.saveConfig = function(config, callback) {
 
 ConfigPublisher.prototype.transformConfig = function(callback) {
   var oss_js = spawn("oss_js", [
-    this.options.karooGeneratorScript, 
+    this.options.karooGeneratorScript,
     this.options.configPath + "/karoo.aggregate.conf",
     this.deployConfig]);
 
@@ -192,7 +195,7 @@ ConfigPublisher.prototype.saveFiles = function(callback) {
       }.bind(this),
 
     function scriptFiles(next) {
-        fs.copy("./scripts", this.deployScripts)        
+        fs.copy("./scripts", this.deployScripts)
           .then(() => {next(null);})
           .catch((err) => {return next(err);});
       }.bind(this),
@@ -220,8 +223,8 @@ ConfigPublisher.prototype.snapshotDB = function(callback) {
 }
 
 ConfigPublisher.prototype.backupKaroo = function(callback) {
-  
-  var backupPath = this.options.backupPath + "/karoo-config-" 
+
+  var backupPath = this.options.backupPath + "/karoo-config-"
     + new Date().toISOString().replace(/\..+/, '').replace(new RegExp(":", "g"), ".");
 
   var backupConfig = backupPath + "/config";
@@ -275,7 +278,7 @@ ConfigPublisher.prototype.backupKaroo = function(callback) {
 }
 
 ConfigPublisher.prototype.publishKaroo = function(callback) {
-  
+
   async.series([
     (next) => {
       fs.copy(this.deployConfig, this.options.publishConfig)
@@ -316,7 +319,7 @@ ConfigPublisher.prototype.writeConfig = function(config, callback) {
 
 ConfigPublisher.prototype.symlinkConfig = function(configFile, callback) {
   var symlink = this.options.configPath + "/karoo.aggregate.conf";
-  
+
   /*Delete symlink if exist*/
   if(fs.existsSync(symlink)) {
     fs.unlinkSync(symlink);
@@ -369,7 +372,7 @@ ConfigPublisher.prototype.checkSnapshotDb = function(callback) {
 
 ConfigPublisher.prototype.saveSnapshotDB = function(callback) {
   //TODO: Retrieve db path on redis client
-  fs.copy("/var/lib/redis/dump.rdb", this.deployPath + "/redis-snapshot.rdb")        
+  fs.copy("/var/lib/redis/dump.rdb", this.deployPath + "/redis-snapshot.rdb")
     .then(() => {callback(null);})
     .catch((err) => {return callback(err);});
 }
@@ -389,7 +392,7 @@ ConfigPublisher.prototype.publish = function() {
   ], (err) => {
     if(err) {
       console.log(err);
-      if(deployPath) {
+      if (this.deployPath) {
         fs.remove(this.deployPath)
           .catch((err) => {
             console.warn("Unable to cleanup temp configs!!!");
@@ -419,7 +422,7 @@ module.exports = function(ConfigGenerator) {
       karooGeneratorScript : ConfigGenerator.settings.karooGeneratorScript,
       redisSettings : ConfigGenerator.app.dataSources.redis.settings
     }
-    
+
     var configPublisher = new ConfigPublisher(id, options);
     configPublisher.publish();
     cb(null, id);
