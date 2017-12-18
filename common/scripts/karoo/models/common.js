@@ -4,5 +4,5 @@ var system = require("system");
 
 module.exports = {
   uploadPath : "%KAROO_CONFIG_DIRECTORY%/config/uploads",
-  karooConfigPath : system.CONFDIR
+  karooConfigPath : system.CONFDIR + "/karoo.conf.d"
 }

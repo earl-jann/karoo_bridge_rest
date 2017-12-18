@@ -163,22 +163,27 @@ ConfigPublisher.prototype.saveConfig = function(config, callback) {
 }
 
 ConfigPublisher.prototype.transformConfig = function(callback) {
-  var oss_js = spawn("oss_js", [
+  var ossjs = spawn("ossjs", [
     this.options.karooGeneratorScript,
     this.options.configPath + "/karoo.aggregate.conf",
     this.deployConfig]);
 
-  oss_js.stdout.on("data", (data) => {
-    console.log("oss_js: ", data);
+  ossjs.stdout.on("data", (data) => {
+    console.log("ossjs: ", data);
   });
 
-  oss_js.stderr.on("data", (data) => {
-    console.log("oss_js: ", data);
+  ossjs.stderr.on("data", (data) => {
+    console.log("ossjs: ", data);
   });
 
-  oss_js.on('close', (code) => {
+  ossjs.on("error", (err) => {
+    return callback(new Error("OSSJS exited with event error: " + err));
+  });
+
+  ossjs.on('close', (code) => {
     console.log("child process exited with code", code);
-    if(code === 0) {
+    callback(null);
+    if(code >= 0) {
       callback(null);
     } else {
       return callback(new Error("OSSJS exit with code: " + code));
@@ -372,7 +377,7 @@ ConfigPublisher.prototype.checkSnapshotDb = function(callback) {
 
 ConfigPublisher.prototype.saveSnapshotDB = function(callback) {
   //TODO: Retrieve db path on redis client
-  fs.copy("/var/lib/redis/dump.rdb", this.deployPath + "/redis-snapshot.rdb")
+  fs.copy(this.options.publishConfig + "/karoo_redis.db", this.deployPath + "/redis-snapshot.rdb")
     .then(() => {callback(null);})
     .catch((err) => {return callback(err);});
 }
@@ -392,7 +397,7 @@ ConfigPublisher.prototype.publish = function() {
   ], (err) => {
     if(err) {
       console.log(err);
-      if (this.deployPath) {
+      if(this.deployPath) {
         fs.remove(this.deployPath)
           .catch((err) => {
             console.warn("Unable to cleanup temp configs!!!");
