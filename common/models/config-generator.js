@@ -70,6 +70,12 @@ ConfigPublisher.prototype.ensureDirPaths = function(callback) {
     },
     /** Ensure publish directory exists**/
     (next) => {
+      fs.ensureDir(this.options.configPath)
+        .then(() => {next(null);})
+        .catch((err) => {return next(err);});
+    },
+
+    (next) => {
       fs.ensureDir(this.options.backupPath)
         .then(() => {next(null);})
         .catch((err) => {return next(err);});
