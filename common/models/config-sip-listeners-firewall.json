@@ -8,6 +8,16 @@
   "http": {
     "path": "/firewall"
   },
+  "mixins": {
+    "ConfigGenerator": {
+      "name": "firewall",
+      "savePath": "/etc/karoo.conf.d/web/generator/current",
+      "list": false,
+      "dependencies": [
+        "config_sip_listeners_firewallrules"
+      ]
+    }
+  },
   "properties": {
     "id": {
       "type": "string",
@@ -22,7 +32,6 @@
   },
   "validations": [],
   "relations": {},
-  "methods": {},
   "acls": [
     {
       "accessType": "*",
@@ -58,5 +67,6 @@
       "permission": "ALLOW",
       "property": "findById"
     }
-  ]
+  ],
+  "methods": {}
 }
