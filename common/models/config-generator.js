@@ -4,6 +4,7 @@ var shortid = require("shortid");
 var fs = require("fs-extra");
 var async = require("async");
 var redis = require("redis");
+var os = require('os');
 var spawn = require("child_process").spawn;
 
 const EventEmitter = require('events').EventEmitter;
@@ -439,8 +440,18 @@ module.exports = function(ConfigGenerator) {
     cb(null, id);
   }
 
+  ConfigGenerator.localNetworkInterfaces = function(cb) {
+    var interfaces = os.networkInterfaces();
+    cb(null, interfaces);
+  }
+
   ConfigGenerator.remoteMethod('generate', {
         returns: {arg: 'jobId', type: 'string'}
+  });
+
+  ConfigGenerator.remoteMethod('localNetworkInterfaces', {
+        returns: {type: 'string', root: true},
+        http: {verb: "GET"}
   });
 
 };

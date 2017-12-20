@@ -30,6 +30,13 @@
       "principalId": "$authenticated",
       "permission": "ALLOW",
       "property": "generate"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "localNetworkInterfaces"
     }
   ],
   "methods": {}
